@@ -9,7 +9,6 @@ namespace NTestApi.Controllers
     [RoutePrefix("api/testapi")]
     public class TestApiController : ApiController
     {
-
         public int CurrentCount { get; set; }
 
         // GET: v1
@@ -21,7 +20,6 @@ namespace NTestApi.Controllers
             cachedCount = cachedCount + 1;
             HttpContext.Current.Cache["requestCount"] = cachedCount;
             return new Time { RequestCount = cachedCount, UniqueId = random.Next(new Random().Next())};
-
         }
     }
 
@@ -66,4 +64,7 @@ namespace NTestApi.Controllers
         public int Second { get { return DateTime.Now.Second; } }
         public int Milliseconds { get { return DateTime.Now.Millisecond; } }
     }
+
+
+   
 }
